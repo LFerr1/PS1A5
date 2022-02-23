@@ -17,16 +17,11 @@ namespace Exercicio2
             InitializeComponent();
         }
 
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Submit_Click(object sender, EventArgs e)
         {
             DateTime dateNascimento = new DateTime();
             dateNascimento = Convert.ToDateTime(dtNascimento.Text);
-            if (dateNascimento.AddYears(18) < DateTime.Today)
+            if (dateNascimento.AddYears(18).Date < DateTime.Today.Date)
             {
                 response.Text = "Resultado: Pode possuir CNH";
             }
